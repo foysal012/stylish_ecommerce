@@ -15,6 +15,8 @@ class IntroPage1 extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Spacer(),
+
           Image.asset('${AppImage.intro1}'),
           Gap(10.0),
           
@@ -33,7 +35,8 @@ class IntroPage1 extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: Colors.black38
             ),
-          )
+          ),
+          Spacer(),
 
         ],
       ),
