@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'modules/introduction/introduction_screen.dart';
+import 'modules/auth/view/forgot_password_screen.dart';
+import 'modules/auth/view/sign_in_screen.dart';
+import 'modules/auth/view/sign_up_screen.dart';
 import 'splash_screen.dart';
 
 void main() {
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       // home: const SplashScreen(),
-      home: const IntroductionScreen(),
+      home: const ForgotPasswordScreen(),
     );
   }
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../home/view/home_screen.dart';
-import 'intro_page1.dart';
-import 'intro_page2.dart';
-import 'intro_page3.dart';
+import '../../home/view/home_screen.dart';
+import '../view/intro_page1.dart';
+import '../view/intro_page2.dart';
+import '../view/intro_page3.dart';
 
 class IntroductionScreen extends StatefulWidget {
   const IntroductionScreen({super.key});
@@ -72,6 +72,9 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                 SmoothPageIndicator(
                     controller: controller,
                     count: 3,
+                    onDotClicked: (index) {
+                      controller.jumpToPage(index);
+                    },
                 ),
 
                 onLastPage?
