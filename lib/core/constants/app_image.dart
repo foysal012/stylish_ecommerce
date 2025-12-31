@@ -27,4 +27,9 @@ class AppImage {
   static final String banner5 = 'assets/images/slider5.jpg';
   static final String banner6 = 'assets/images/slider6.jpg';
 
+  static final String offerLogo = 'assets/images/offer_logo.png';
+  static final String offerBanner = 'assets/images/offer_banner.png';
+  static final String offerBanner2 = 'assets/images/offer_banner2.png';
+  static final String offerBanner3 = 'assets/images/offer_banner3.png';
+
 }
