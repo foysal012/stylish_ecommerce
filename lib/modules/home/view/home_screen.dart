@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating/flutter_rating.dart';
 import 'package:gap/gap.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:stylish_ecommerce/core/constants/app_image.dart';
@@ -41,6 +42,135 @@ class _HomeScreenState extends State<HomeScreen> {
     CategoryModel(categoryImage: AppImage.kidsCategory, categoryName: 'Kids'),
     CategoryModel(categoryImage: AppImage.mensCategory, categoryName: 'Mens'),
     CategoryModel(categoryImage: AppImage.womanCategory, categoryName: 'Woman'),
+  ];
+
+  List<Product> productList = [
+    Product(
+      productImage: AppImage.productImage1,
+      productName: 'Sara watch model xx78',
+      ProductNewPrice: '950',
+      productOldPrice: '1860',
+      productDiscount: '65',
+      productRating: '4.5',
+      productRatingNumber: '850'
+    ),
+    Product(
+        productImage: AppImage.productImage2,
+        productName: 'Gibson watch model xx88',
+        ProductNewPrice: '850',
+        productOldPrice: '1960',
+        productDiscount: '53',
+        productRating: '4.3',
+        productRatingNumber: '320'
+    ),
+    Product(
+        productImage: AppImage.productImage3,
+        productName: 'Apex watch model xx48',
+        ProductNewPrice: '750',
+        productOldPrice: '1560',
+        productDiscount: '46',
+        productRating: '4.2',
+        productRatingNumber: '550'
+    ),
+    Product(
+        productImage: AppImage.productImage4,
+        productName: 'Bata watch model xx78',
+        ProductNewPrice: '450',
+        productOldPrice: '1260',
+        productDiscount: '82',
+        productRating: '4.1',
+        productRatingNumber: '910'
+    ),
+    Product(
+        productImage: AppImage.productImage5,
+        productName: 'Sara shoe model xx68',
+        ProductNewPrice: '350',
+        productOldPrice: '1960',
+        productDiscount: '35',
+        productRating: '3.5',
+        productRatingNumber: '550'
+    ),
+    Product(
+        productImage: AppImage.productImage6,
+        productName: 'Zara shoe model xx98',
+        ProductNewPrice: '450',
+        productOldPrice: '1960',
+        productDiscount: '35',
+        productRating: '3.5',
+        productRatingNumber: '550'
+    ),
+    Product(
+        productImage: AppImage.productImage7,
+        productName: 'Sara dress model xx78',
+        ProductNewPrice: '950',
+        productOldPrice: '1860',
+        productDiscount: '65',
+        productRating: '4.5',
+        productRatingNumber: '850'
+    ),
+    Product(
+        productImage: AppImage.productImage8,
+        productName: 'Zara dress model xx78',
+        ProductNewPrice: '950',
+        productOldPrice: '1860',
+        productDiscount: '65',
+        productRating: '4.5',
+        productRatingNumber: '850'
+    ),
+    Product(
+        productImage: AppImage.productImage9,
+        productName: 'Hujaifa Mens model xx78',
+        ProductNewPrice: '950',
+        productOldPrice: '1860',
+        productDiscount: '65',
+        productRating: '4.5',
+        productRatingNumber: '850'
+    ),
+    Product(
+        productImage: AppImage.productImage10,
+        productName: 'Hannan Mens model xx78',
+        ProductNewPrice: '950',
+        productOldPrice: '1860',
+        productDiscount: '65',
+        productRating: '4.5',
+        productRatingNumber: '850'
+    ),
+    Product(
+        productImage: AppImage.productImage11,
+        productName: 'Kids dress model xx78',
+        ProductNewPrice: '950',
+        productOldPrice: '1860',
+        productDiscount: '65',
+        productRating: '4.5',
+        productRatingNumber: '850'
+    ),
+    Product(
+        productImage: AppImage.productImage12,
+        productName: 'Kids dress model xx78',
+        ProductNewPrice: '950',
+        productOldPrice: '1860',
+        productDiscount: '65',
+        productRating: '4.5',
+        productRatingNumber: '850'
+    ),
+    Product(
+        productImage: AppImage.productImage13,
+        productName: 'Mobile model xx78',
+        ProductNewPrice: '950',
+        productOldPrice: '1860',
+        productDiscount: '65',
+        productRating: '4.5',
+        productRatingNumber: '850'
+    ),
+    Product(
+        productImage: AppImage.productImage14,
+        productName: 'Mobile model xx78',
+        ProductNewPrice: '950',
+        productOldPrice: '1860',
+        productDiscount: '65',
+        productRating: '4.5',
+        productRatingNumber: '850'
+    )
   ];
 
   @override
@@ -335,6 +465,27 @@ class _HomeScreenState extends State<HomeScreen> {
               Gap(16.0),
           
               // Offer Product
+              SizedBox(
+                height: 200,
+                child: ListView.builder(
+                  itemCount: productList.length,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    final productInfo = productList[index];
+                    return ProductMiniCard(
+                      productImage: productInfo.productImage??'',
+                      productName: productInfo.productName??'',
+                      productNewPrice: '\$${productInfo.ProductNewPrice}',
+                      productOldPrice: '\$${productInfo.productOldPrice}',
+                      productDiscount: '${productInfo.productDiscount}',
+                      productRating: double.tryParse('${productInfo.productRating}'),
+                      productRatingNumber: '${productInfo.productRatingNumber}',
+                    );
+                  },
+                ),
+              ),
+              Gap(16.0),
           
               // Offer Card 2
               Container(
@@ -458,47 +609,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
               // Offer Product 2
               SizedBox(
-                height: 205,
+                height: 200,
                 child: ListView.builder(
-                  itemCount: 3,
+                  itemCount: productList.length,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return Container(
-                      padding: EdgeInsets.only(right: 16.0),
-                      width: 142,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                        color: Colors.white
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 104,
-                            width: 142,
-                            decoration: BoxDecoration(
-                              color: Colors.purple,
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10.0),
-                                topRight: Radius.circular(10.0)
-                              )
-                            ),
-                          ),
-
-                          Text('IWC Schaffhausen 2021 Pilot\'s Watch "SIHH 2019" 44mm'),
-                          Text('\$650'),
-                          Row(
-                            children: [
-                              Text('\$1599'),
-                              Gap(5.0),
-
-                              Text('60% off'),
-                            ],
-                          ),
-
-                        ],
-                      ),
+                    final productInfo = productList[index];
+                    return ProductMiniCard(
+                      productImage: productInfo.productImage??'',
+                      productName: productInfo.productName??'',
+                      productNewPrice: '\$${productInfo.ProductNewPrice}',
+                      productOldPrice: '\$${productInfo.productOldPrice}',
+                      productDiscount: '${productInfo.productDiscount}',
+                      productRating: double.tryParse('${productInfo.productRating}'),
+                      productRatingNumber: '${productInfo.productRatingNumber}',
                     );
                     },
                 ),
@@ -553,6 +678,136 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
+class ProductMiniCard extends StatelessWidget {
+  const ProductMiniCard({
+    super.key,
+    required this.productImage,
+    required this.productName,
+    required this.productNewPrice,
+    this.productOldPrice,
+    this.productDiscount,
+    this.productRating,
+    this.productRatingNumber
+  });
+
+  final String productImage;
+  final String productName;
+  final String productNewPrice;
+  final String? productOldPrice;
+  final String? productDiscount;
+  final double? productRating;
+  final String? productRatingNumber;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(right: 16.0),
+      width: 148,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        // color: Colors.white
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Container(
+              height: 104,
+              width: 142,
+              decoration: BoxDecoration(
+                // image: DecorationImage(image: AssetImage('${AppImage.kidsCategory}')),
+                image: DecorationImage(image: AssetImage('${productImage}'), fit: BoxFit.cover),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10.0),
+                  topRight: Radius.circular(10.0)
+                )
+              ),
+            ),
+          ),
+
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  // 'IWC Schaffhausen 2021 Pilot\'s Watch "SIHH 2019" 44mm',
+                  '$productName',
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  // '\$650',
+                  '\$$productNewPrice',
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black
+                  ),
+                ),
+                Row(
+                  children: [
+                    Text(
+                      // '\$1599',
+                      '\$$productOldPrice',
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black26,
+                          decoration: TextDecoration.lineThrough
+                      ),
+                    ),
+                    Gap(10.0),
+
+                    Text(
+                      // '60% off',
+                      '$productDiscount% off',
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xffFE735C)
+                      ),
+                    ),
+                  ],
+                ),
+
+                Row(
+                  children: [
+                    StarRating(
+                      size: 20.0,
+                      rating: productRating??0.0,
+                      color: Colors.orange,
+                      borderColor: Colors.grey,
+                      allowHalfRating: true,
+                      // starCount: starCount,
+                      // onRatingChanged: (rating) => setState(() {
+                      //   this.rating = rating;
+                      // }),
+                    ),
+                    Text('($productRatingNumber)',
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
+
+        ],
+      ),
+    );
+  }
+}
+
 class CategoryModel{
   String categoryImage;
   String categoryName;
@@ -560,5 +815,25 @@ class CategoryModel{
   CategoryModel({
     required this.categoryImage, 
     required this.categoryName
+  });
+}
+
+class Product{
+  String? productImage;
+  String? productName;
+  String? ProductNewPrice;
+  String? productOldPrice;
+  String? productDiscount;
+  String? productRating;
+  String? productRatingNumber;
+
+  Product({
+    this.productImage,
+    this.productName,
+    this.ProductNewPrice,
+    this.productOldPrice,
+    this.productDiscount,
+    this.productRating,
+    this.productRatingNumber
   });
 }
