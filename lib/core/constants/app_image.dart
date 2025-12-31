@@ -32,4 +32,19 @@ class AppImage {
   static final String offerBanner2 = 'assets/images/offer_banner2.png';
   static final String offerBanner3 = 'assets/images/offer_banner3.png';
 
+  static final String productImage1 = 'assets/images/product1.jpg';
+  static final String productImage2 = 'assets/images/product2.jpg';
+  static final String productImage3 = 'assets/images/product3.jpg';
+  static final String productImage4 = 'assets/images/product4.jpg';
+  static final String productImage5 = 'assets/images/product5.jpg';
+  static final String productImage6 = 'assets/images/product6.jpg';
+  static final String productImage7 = 'assets/images/product7.jpg';
+  static final String productImage8 = 'assets/images/product8.jpg';
+  static final String productImage9 = 'assets/images/product9.jpg';
+  static final String productImage10 = 'assets/images/product10.jpg';
+  static final String productImage11 = 'assets/images/product11.jpg';
+  static final String productImage12 = 'assets/images/product12.jpg';
+  static final String productImage13 = 'assets/images/product13.jpg';
+  static final String productImage14 = 'assets/images/product14.jpg';
+
 }
