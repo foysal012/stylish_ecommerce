@@ -194,161 +194,163 @@ class _WishlistScreenState extends State<WishlistScreen> {
       ),
 
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+        padding: EdgeInsets.all(16.0),
 
-        child: SingleChildScrollView(
+        child: CustomScrollView(
           scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
+            slivers: [
 
               // Search Text Field
-              TextFormField(
-                controller: searchTextController,
-                decoration: InputDecoration(
-                    prefixIcon: Icon(Symbols.search, color: Color(0xffA8A8A9)),
-                    hintText: 'Search any product...',
-                    hintStyle: TextStyle(
-                        fontSize: 12,
-                        color: Color(0xff676767),
-                        fontWeight: FontWeight.w500
-                    ),
-                    suffixIcon: IconButton(
-                        onPressed: (){
-
-                        },
-                        icon: Icon(Symbols.mic)
-                    ),
-                    fillColor: Colors.white,
-                    filled: true,
-                    // enabledBorder: OutlineInputBorder(
-                    //     borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    //     borderSide: BorderSide(
-                    //         width: 2,
-                    //         color: Color(0xffA8A8A9)
-                    //     )
-                    // ),
-                    // focusedBorder: OutlineInputBorder(
-                    //     borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    //     borderSide: BorderSide(
-                    //         width: 2,
-                    //         color: Color(0xffA8A8A9)
-                    //     )
-                    // )
-                    border: InputBorder.none
+              SliverToBoxAdapter(
+                child: TextFormField(
+                  controller: searchTextController,
+                  decoration: InputDecoration(
+                      prefixIcon: Icon(Symbols.search, color: Color(0xffA8A8A9)),
+                      hintText: 'Search any product...',
+                      hintStyle: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xff676767),
+                          fontWeight: FontWeight.w500
+                      ),
+                      suffixIcon: IconButton(
+                          onPressed: (){
+                
+                          },
+                          icon: Icon(Symbols.mic)
+                      ),
+                      fillColor: Colors.white,
+                      filled: true,
+                      // enabledBorder: OutlineInputBorder(
+                      //     borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      //     borderSide: BorderSide(
+                      //         width: 2,
+                      //         color: Color(0xffA8A8A9)
+                      //     )
+                      // ),
+                      // focusedBorder: OutlineInputBorder(
+                      //     borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      //     borderSide: BorderSide(
+                      //         width: 2,
+                      //         color: Color(0xffA8A8A9)
+                      //     )
+                      // )
+                      border: InputBorder.none
+                  ),
                 ),
               ),
-              Gap(16.0),
+              SliverToBoxAdapter(child: Gap(16.0)),
 
               // All featured || sort || filter
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('All Featured',
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Color(0xff000000),
-                        fontWeight: FontWeight.w500
-                    ),
-                  ),
-
-                  Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(5.0),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(5.0))
-                        ),
-                        child: Row(
-                          children: [
-                            Text('Sort',
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500
-                              ),
-                            ),
-                            Gap(5.0),
-                            Icon(Symbols.swap_vert, size: 15)
-                          ],
-                        ),
+              SliverToBoxAdapter(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('All Featured',
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Color(0xff000000),
+                          fontWeight: FontWeight.w500
                       ),
-                      Gap(10.0),
-
-                      Container(
-                        padding: EdgeInsets.all(5.0),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(5.0))
-                        ),
-                        child: Row(
-                          children: [
-                            Text('Filter',
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500
+                    ),
+                
+                    Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(5.0),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.all(Radius.circular(5.0))
+                          ),
+                          child: Row(
+                            children: [
+                              Text('Sort',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500
+                                ),
                               ),
-                            ),
-                            Gap(5.0),
-                            Icon(Symbols.filter_alt, size: 15)
-                          ],
+                              Gap(5.0),
+                              Icon(Symbols.swap_vert, size: 15)
+                            ],
+                          ),
                         ),
-                      )
-                    ],
-                  )
-                ],
+                        Gap(10.0),
+                
+                        Container(
+                          padding: EdgeInsets.all(5.0),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.all(Radius.circular(5.0))
+                          ),
+                          child: Row(
+                            children: [
+                              Text('Filter',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500
+                                ),
+                              ),
+                              Gap(5.0),
+                              Icon(Symbols.filter_alt, size: 15)
+                            ],
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
-              Gap(16.0),
+              SliverToBoxAdapter(child: Gap(16.0)),
 
               // Offer Product
-              // SizedBox(
-                // height: 200,
-                // child: ListView.builder(
-                //   itemCount: productList.length,
-                //   shrinkWrap: true,
-                //   scrollDirection: Axis.horizontal,
-                //   itemBuilder: (context, index) {
-                //     final productInfo = productList[index];
-                //     return ProductMiniCard(
-                //       productImage: productInfo.productImage??'',
-                //       productName: productInfo.productName??'',
-                //       productNewPrice: '\$${productInfo.ProductNewPrice}',
-                //       productOldPrice: '\$${productInfo.productOldPrice}',
-                //       productDiscount: '${productInfo.productDiscount}',
-                //       productRating: double.tryParse('${productInfo.productRating}'),
-                //       productRatingNumber: '${productInfo.productRatingNumber}',
-                //     );
-                //   },
-                // ),
-              // ),
-              SizedBox(
-                height: height,
-                child: GridView.builder(
-                    itemCount: productList.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 10.0,
-                        mainAxisSpacing: 10.0,
-                        childAspectRatio: 0.95
-                    ),
-                    itemBuilder: (context, index) {
-                          final productInfo = productList[index];
-                          return ProductMiniCard(
-                            productImage: productInfo.productImage??'',
-                            productName: productInfo.productName??'',
+              SliverGrid(
+                delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                    final productInfo = productList[index];
+                    return Align(
+                      alignment: AlignmentGeometry.center,
+                      child: Stack(
+                        children: [
+                          ProductMiniCard(
+                            productImage: productInfo.productImage ?? '',
+                            productName: productInfo.productName ?? '',
                             productNewPrice: '\$${productInfo.ProductNewPrice}',
                             productOldPrice: '\$${productInfo.productOldPrice}',
                             productDiscount: '${productInfo.productDiscount}',
                             productRating: double.tryParse('${productInfo.productRating}'),
                             productRatingNumber: '${productInfo.productRatingNumber}',
-                          );
-                    },
+                          ),
+
+                          Positioned(
+                            right: 0.0,
+                            top: 1.0,
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.grey[500]
+                              ),
+                              child: Icon(Symbols.heart_check_rounded, color: Colors.red)
+                            ),
+                          )
+                        ],
+                      ),
+                    );
+                  },
+                  childCount: productList.length,
+                ),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 0.95,
                 ),
               ),
-              Gap(16.0),
+              SliverToBoxAdapter(child: Gap(50.0)),
             ],
-          ),
         ),
       ),
     );
