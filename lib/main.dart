@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'modules/bottom_navber_screen/view/bottom_navber_screen.dart';
+import 'modules/checkout/view/checkout_screen.dart';
+import 'modules/checkout/view/select_address_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,8 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       // home: const SplashScreen(),
-      home: const BottomNavigationScreen(),
+      // home: const BottomNavigationScreen(),
+      home: const SelectAddressScreen(),
     );
   }
 }
