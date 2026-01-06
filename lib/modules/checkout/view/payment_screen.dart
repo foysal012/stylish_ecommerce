@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:lottie/lottie.dart';
 import 'package:material_symbols_icons/symbols.dart';
+
+import '../../bottom_navber_screen/view/bottom_navber_screen.dart';
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -156,7 +159,41 @@ class _PaymentScreenState extends State<PaymentScreen> {
       ),
       bottomNavigationBar: SafeArea(
           child: GestureDetector(
-            // onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => CheckoutScreen())),
+            onTap: () => showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => BottomNavigationScreen()), (route) => false);
+                          },
+                          child: Icon(Icons.close, color: Colors.red)
+                      )
+                    ],
+                  ),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Lottie.asset(
+                        'assets/animations/success.json',
+                        decoder: LottieComposition.decodeGZip,
+                      ),
+                      Text('Payment done successfully',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              },
+            ),
             child: Container(
               height: 62,
               padding: EdgeInsets.all(10.0),

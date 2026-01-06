@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import '../../../core/constants/app_image.dart';
+import '../../checkout/view/select_address_screen.dart';
 import '../../home/view/home_screen.dart';
 
 class CartScreen extends StatefulWidget {
@@ -400,19 +401,22 @@ class _CartScreenState extends State<CartScreen> {
                 ),
                 Gap(10.0),
                 
-                Container(
-                  height: 52,
-                  width: MediaQuery.sizeOf(context).width,
-                  alignment: AlignmentGeometry.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    color: Color(0xffF83758)
-                  ),
-                  child: Text('Checkout',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white
+                GestureDetector(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => SelectAddressScreen())),
+                  child: Container(
+                    height: 52,
+                    width: MediaQuery.sizeOf(context).width,
+                    alignment: AlignmentGeometry.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      color: Color(0xffF83758)
+                    ),
+                    child: Text('Checkout',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white
+                      ),
                     ),
                   ),
                 )

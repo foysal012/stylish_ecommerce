@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'modules/bottom_navber_screen/view/bottom_navber_screen.dart';
-import 'modules/checkout/view/checkout_screen.dart';
-import 'modules/checkout/view/select_address_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,15 +11,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: const SplashScreen(),
-      // home: const BottomNavigationScreen(),
-      home: const SelectAddressScreen(),
+      home: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        ),
+        debugShowCheckedModeBanner: false,
+        // home: const SplashScreen(),
+        home: const BottomNavigationScreen(),
+        // home: const SelectAddressScreen(),
+      ),
     );
   }
 }
