@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import '../../../core/constants/app_image.dart';
 import '../../home/view/home_screen.dart';
+import '../../product/view/product_details_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -311,14 +312,17 @@ class _SearchScreenState extends State<SearchScreen> {
                   final productInfo = productList[index];
                   return Align(
                     alignment: AlignmentGeometry.center,
-                    child: ProductMiniCard(
-                      productImage: productInfo.productImage ?? '',
-                      productName: productInfo.productName ?? '',
-                      productNewPrice: '\$${productInfo.ProductNewPrice}',
-                      productOldPrice: '\$${productInfo.productOldPrice}',
-                      productDiscount: '${productInfo.productDiscount}',
-                      productRating: double.tryParse('${productInfo.productRating}'),
-                      productRatingNumber: '${productInfo.productRatingNumber}',
+                    child: GestureDetector(
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProductDetailsScreen())),
+                      child: ProductMiniCard(
+                        productImage: productInfo.productImage ?? '',
+                        productName: productInfo.productName ?? '',
+                        productNewPrice: '\$${productInfo.ProductNewPrice}',
+                        productOldPrice: '\$${productInfo.productOldPrice}',
+                        productDiscount: '${productInfo.productDiscount}',
+                        productRating: double.tryParse('${productInfo.productRating}'),
+                        productRatingNumber: '${productInfo.productRatingNumber}',
+                      ),
                     ),
                   );
                 },
