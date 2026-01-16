@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import '../../../core/constants/app_image.dart';
 import '../../home/view/home_screen.dart';
+import '../../product/view/product_details_screen.dart';
 
 class WishlistScreen extends StatefulWidget {
   const WishlistScreen({super.key});
@@ -313,14 +314,17 @@ class _WishlistScreenState extends State<WishlistScreen> {
                       alignment: AlignmentGeometry.center,
                       child: Stack(
                         children: [
-                          ProductMiniCard(
-                            productImage: productInfo.productImage ?? '',
-                            productName: productInfo.productName ?? '',
-                            productNewPrice: '\$${productInfo.ProductNewPrice}',
-                            productOldPrice: '\$${productInfo.productOldPrice}',
-                            productDiscount: '${productInfo.productDiscount}',
-                            productRating: double.tryParse('${productInfo.productRating}'),
-                            productRatingNumber: '${productInfo.productRatingNumber}',
+                          GestureDetector(
+                            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProductDetailsScreen())),
+                            child: ProductMiniCard(
+                              productImage: productInfo.productImage ?? '',
+                              productName: productInfo.productName ?? '',
+                              productNewPrice: '\$${productInfo.ProductNewPrice}',
+                              productOldPrice: '\$${productInfo.productOldPrice}',
+                              productDiscount: '${productInfo.productDiscount}',
+                              productRating: double.tryParse('${productInfo.productRating}'),
+                              productRatingNumber: '${productInfo.productRatingNumber}',
+                            ),
                           ),
 
                           Positioned(

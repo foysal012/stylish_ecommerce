@@ -620,14 +620,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     final productInfo = productList[index];
-                    return ProductMiniCard(
-                      productImage: productInfo.productImage??'',
-                      productName: productInfo.productName??'',
-                      productNewPrice: '\$${productInfo.ProductNewPrice}',
-                      productOldPrice: '\$${productInfo.productOldPrice}',
-                      productDiscount: '${productInfo.productDiscount}',
-                      productRating: double.tryParse('${productInfo.productRating}'),
-                      productRatingNumber: '${productInfo.productRatingNumber}',
+                    return GestureDetector(
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProductDetailsScreen())),
+                      child: ProductMiniCard(
+                        productImage: productInfo.productImage??'',
+                        productName: productInfo.productName??'',
+                        productNewPrice: '\$${productInfo.ProductNewPrice}',
+                        productOldPrice: '\$${productInfo.productOldPrice}',
+                        productDiscount: '${productInfo.productDiscount}',
+                        productRating: double.tryParse('${productInfo.productRating}'),
+                        productRatingNumber: '${productInfo.productRatingNumber}',
+                      ),
                     );
                     },
                 ),
