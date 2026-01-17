@@ -72,13 +72,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       style: TextStyle(
                           fontSize: 15,
                           color: Color(0xffFF4B26),
-                          fontWeight: FontWeight.w500,
-                          // shadows: [
-                          //   Shadow(
-                          //     color: Color(0xffF83758),
-                          //     offset: Offset(0, -0.3)
-                          //   )
-                          // ]
+                          fontWeight: FontWeight.w500
                       ),
                     ),
 
