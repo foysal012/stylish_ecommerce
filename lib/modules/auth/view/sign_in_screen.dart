@@ -213,7 +213,6 @@ class _SignInScreenState extends State<SignInScreen> {
                       Text('Sign Up',
                         style: TextStyle(
                             fontSize: 12,
-                            // color: Color(0xffF83758),
                             color: Colors.transparent,
                             fontWeight: FontWeight.w700,
                             decoration: TextDecoration.underline,
@@ -223,7 +222,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             shadows: [
                               Shadow(
                                 color: Color(0xffF83758),
-                                offset: Offset(0, -2), // Move text 5 pixels above the underline
+                                offset: Offset(0, -2),
                               ),
                             ]
                         ),
