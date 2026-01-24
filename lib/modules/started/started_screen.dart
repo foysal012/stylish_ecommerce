@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:stylish_ecommerce/core/constants/app_image.dart';
 import 'package:stylish_ecommerce/modules/home/view/home_screen.dart';
 
@@ -39,9 +40,7 @@ class StartedScreen extends StatelessWidget {
             Gap(44.0),
 
             GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen()));
-              },
+              onTap: () => Get.to(() => HomeScreen()),
               child: Container(
                 height: 52,
                 margin: EdgeInsets.symmetric(horizontal: 55.0),

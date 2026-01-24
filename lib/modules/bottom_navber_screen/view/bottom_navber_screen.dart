@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
-import 'package:stylish_ecommerce/modules/cart/view/cart_screen.dart';
-import 'package:stylish_ecommerce/modules/home/view/home_screen.dart';
-import 'package:stylish_ecommerce/modules/search/view/search_screen.dart';
-import 'package:stylish_ecommerce/modules/settings/view/settings_screen.dart';
-import 'package:stylish_ecommerce/modules/wishlist/view/wishlist_screen.dart';
+import '../../cart/view/cart_screen.dart';
+import '../../home/view/home_screen.dart';
+import '../../search/view/search_screen.dart';
+import '../../settings/view/settings_screen.dart';
+import '../../wishlist/view/wishlist_screen.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   const BottomNavigationScreen({super.key});
@@ -18,7 +18,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   List<Widget> bodyList = [
     HomeScreen(),
     WishlistScreen(),
-    CartScreen(),
+    CartScreen(fromHomePage: true),
     SearchScreen(),
     SettingsScreen()
   ];

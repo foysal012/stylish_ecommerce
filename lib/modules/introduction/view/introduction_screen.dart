@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../home/view/home_screen.dart';
 import '../view/intro_page1.dart';
@@ -79,9 +80,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
 
                 onLastPage?
                 GestureDetector(
-                    onTap:(){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen()));
-                    },
+                    onTap:()=>Get.offAll(()=> HomeScreen()),
                     child: Text('Done',
                       style: TextStyle(
                           fontSize: 16,
