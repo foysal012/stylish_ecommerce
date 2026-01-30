@@ -12,8 +12,8 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.sizeOf(context).height;
-    final width = MediaQuery.sizeOf(context).width;
+    // final height = MediaQuery.sizeOf(context).height;
+    // final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       backgroundColor: Color(0xffF2F2F2),
       appBar: AppBar(

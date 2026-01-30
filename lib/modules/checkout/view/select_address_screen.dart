@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:material_symbols_icons/symbols.dart';
-import 'package:stylish_ecommerce/modules/address/view/address_screen.dart';
-
+import '../../address/view/address_screen.dart';
 import 'checkout_screen.dart';
 
 class SelectAddressScreen extends StatefulWidget {
@@ -17,15 +17,15 @@ class _SelectAddressScreenState extends State<SelectAddressScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.sizeOf(context).height;
-    final width = MediaQuery.sizeOf(context).width;
+    // final height = MediaQuery.sizeOf(context).height;
+    // final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       backgroundColor: Color(0xffF2F2F2),
       appBar: AppBar(
           backgroundColor: Color(0xffF2F2F2),
           leadingWidth: 40,
           leading: GestureDetector(
-            onTap: () => Navigator.pop(context),
+            onTap: () => Get.back(),
             child: Padding(
               padding: const EdgeInsets.only(left: 10.0),
               child: Container(
@@ -108,8 +108,9 @@ class _SelectAddressScreenState extends State<SelectAddressScreen> {
                   Expanded(
                       flex: 1,
                       child: GestureDetector(
-                          onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddressScreen())),
-                          child: Icon(Symbols.control_point_duplicate))),
+                          onTap: () => Get.to(() => AddressScreen()),
+                          child: Icon(Symbols.control_point_duplicate))
+                  ),
                 ],
               ),
             ),
@@ -304,7 +305,7 @@ class _SelectAddressScreenState extends State<SelectAddressScreen> {
 
       bottomNavigationBar: SafeArea(
           child: GestureDetector(
-            onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => CheckoutScreen())),
+            onTap: ()=> Get.to(() => CheckoutScreen()),
             child: Container(
               height: 62,
               padding: EdgeInsets.all(10.0),

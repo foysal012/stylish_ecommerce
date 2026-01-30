@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:material_symbols_icons/symbols.dart';
 
 class AddressScreen extends StatefulWidget {
@@ -39,15 +40,15 @@ class _AddressScreenState extends State<AddressScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.sizeOf(context).height;
-    final width = MediaQuery.sizeOf(context).width;
+    // final height = MediaQuery.sizeOf(context).height;
+    // final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       backgroundColor: Color(0xffF2F2F2),
       appBar: AppBar(
           backgroundColor: Color(0xffF2F2F2),
           leadingWidth: 40,
           leading: GestureDetector(
-            onTap: () => Navigator.pop(context),
+            onTap: () => Get.back(),
             child: Padding(
               padding: const EdgeInsets.only(left: 10.0),
               child: Container(
@@ -500,7 +501,7 @@ class _AddressScreenState extends State<AddressScreen> {
               Gap(20.0),
 
               GestureDetector(
-                onTap: () => Navigator.pop(context),
+                onTap: () => Get.back(),
                 child: Container(
                   height: 52,
                   width: MediaQuery.sizeOf(context).width,

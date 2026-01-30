@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:gap/gap.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:stylish_ecommerce/core/constants/app_image.dart';
+import 'core/constants/app_image.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

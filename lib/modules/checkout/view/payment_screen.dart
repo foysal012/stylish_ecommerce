@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:material_symbols_icons/symbols.dart';
 
@@ -21,7 +22,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
           backgroundColor: Color(0xffF2F2F2),
           leadingWidth: 40,
           leading: GestureDetector(
-            onTap: () => Navigator.pop(context),
+            onTap: () => Get.back(),
             child: Padding(
               padding: const EdgeInsets.only(left: 10.0),
               child: Container(
@@ -168,8 +169,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     children: [
                       InkWell(
                           onTap: () {
-                            Navigator.pop(context);
-                            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => BottomNavigationScreen()), (route) => false);
+                            Get.back();
+                            Get.offAll(()=>BottomNavigationScreen());
                           },
                           child: Icon(Icons.close, color: Colors.red)
                       )

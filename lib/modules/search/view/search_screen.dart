@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import '../../../core/constants/app_image.dart';
-import '../../home/view/home_screen.dart';
+import '../../../data/models/product/product_model.dart';
+import '../../../widgets/product/product_mini_card.dart';
 import '../../product/view/product_details_screen.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -153,8 +155,8 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.sizeOf(context).height;
-    final width = MediaQuery.sizeOf(context).width;
+    // final height = MediaQuery.sizeOf(context).height;
+    // final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       backgroundColor: Color(0xffF2F2F2),
       appBar: AppBar(
@@ -313,7 +315,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   return Align(
                     alignment: AlignmentGeometry.center,
                     child: GestureDetector(
-                      onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProductDetailsScreen())),
+                      onTap: ()=> Get.to(()=> ProductDetailsScreen()),
                       child: ProductMiniCard(
                         productImage: productInfo.productImage ?? '',
                         productName: productInfo.productName ?? '',

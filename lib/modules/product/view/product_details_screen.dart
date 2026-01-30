@@ -3,10 +3,11 @@ import 'package:flutter_rating/flutter_rating.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:material_symbols_icons/symbols.dart';
-import 'package:stylish_ecommerce/core/constants/App_text.dart';
-
+import '../../../core/constants/App_text.dart';
 import '../../../core/constants/app_image.dart';
-import '../../home/view/home_screen.dart';
+import '../../../data/models/product/product_model.dart';
+import '../../../widgets/product/product_mini_card.dart';
+import '../../cart/view/cart_screen.dart';
 import '../controller/product_details_controller.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -151,15 +152,15 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.sizeOf(context).height;
-    final width = MediaQuery.sizeOf(context).width;
+    // final height = MediaQuery.sizeOf(context).height;
+    // final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       backgroundColor: Color(0xffF2F2F2),
       appBar: AppBar(
         backgroundColor: Color(0xffF2F2F2),
         scrolledUnderElevation: 0.0,
         leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
+          onTap: () => Get.back(),
           child: Padding(
             padding: const EdgeInsets.only(left: 10.0),
             child: Container(
@@ -175,10 +176,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         ),
 
         actions: [
-          CircleAvatar(
-              radius: 20,
-              backgroundColor: Colors.black12,
-              child: Icon(Symbols.shopping_cart),
+          GestureDetector(
+            onTap: () => Get.to(()=>CartScreen()),
+            child: CircleAvatar(
+                radius: 20,
+                backgroundColor: Colors.black12,
+                child: Icon(Symbols.shopping_cart),
+            ),
           ),
           Gap(10.0)
         ],
@@ -664,7 +668,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   itemBuilder: (context, index) {
                     final productInfo = productList[index];
                     return GestureDetector(
-                      onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProductDetailsScreen())),
+                      onTap: () => Get.to(() => ProductDetailsScreen()),
                       child: ProductMiniCard(
                         productImage: productInfo.productImage??'',
                         productName: productInfo.productName??'',

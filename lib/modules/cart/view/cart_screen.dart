@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import '../../../core/constants/app_image.dart';
+import '../../../data/models/product/product_model.dart';
 import '../../checkout/view/select_address_screen.dart';
-import '../../home/view/home_screen.dart';
 
 class CartScreen extends StatefulWidget {
-  const CartScreen({super.key});
+  const CartScreen({super.key, this.fromHomePage = false});
+  final bool fromHomePage;
 
   @override
   State<CartScreen> createState() => _CartScreenState();
@@ -145,8 +147,8 @@ class _CartScreenState extends State<CartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.sizeOf(context).height;
-    final width = MediaQuery.sizeOf(context).width;
+    // final height = MediaQuery.sizeOf(context).height;
+    // final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       backgroundColor: Color(0xffF2F2F2),
       appBar: AppBar(
@@ -154,10 +156,21 @@ class _CartScreenState extends State<CartScreen> {
         scrolledUnderElevation: 0.0,
         leading: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: CircleAvatar(
+          child: widget.fromHomePage?CircleAvatar(
             maxRadius: 10,
             backgroundColor: Colors.black12,
             child: Icon(Symbols.menu_open),
+          ):GestureDetector(
+            onTap: () => Get.back(),
+            child: Container(
+              height: 20,
+              width: 20,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.grey[500],
+              ),
+              child: Icon(Symbols.arrow_back),
+            ),
           ),
         ),
 
@@ -402,7 +415,7 @@ class _CartScreenState extends State<CartScreen> {
                 Gap(10.0),
                 
                 GestureDetector(
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => SelectAddressScreen())),
+                  onTap: () => Get.to(() => SelectAddressScreen()),
                   child: Container(
                     height: 52,
                     width: MediaQuery.sizeOf(context).width,
