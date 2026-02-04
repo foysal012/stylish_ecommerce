@@ -7,6 +7,7 @@ import '../../../core/constants/app_image.dart';
 import '../../../data/models/product/category_model.dart';
 import '../../../data/models/product/product_model.dart';
 import '../../../widgets/product/product_mini_card.dart';
+import '../../app_drawer/view/app_drawer_screen.dart';
 import '../../product/view/product_details_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -177,6 +178,8 @@ class _HomeScreenState extends State<HomeScreen> {
     )
   ];
 
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   void dispose() {
     searchTextController.dispose();
@@ -188,16 +191,22 @@ class _HomeScreenState extends State<HomeScreen> {
     // final height = MediaQuery.sizeOf(context).height;
     final width = MediaQuery.sizeOf(context).width;
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: Color(0xffF2F2F2),
+      drawer: AppDrawerScreen(),
+
       appBar: AppBar(
         backgroundColor: Color(0xffF2F2F2),
         scrolledUnderElevation: 0.0,
-        leading: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: CircleAvatar(
-            maxRadius: 10,
-            backgroundColor: Colors.black12,
-            child: Icon(Symbols.menu_open),
+        leading: GestureDetector(
+          onTap: () => scaffoldKey.currentState?.openDrawer(),
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: CircleAvatar(
+              maxRadius: 10,
+              backgroundColor: Colors.black12,
+              child: Icon(Symbols.menu_open),
+            ),
           ),
         ),
         
