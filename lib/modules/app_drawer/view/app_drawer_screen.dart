@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import '../../../widgets/app_drawer/app_drawer_card.dart';
 
 class AppDrawerScreen extends StatelessWidget {
   const AppDrawerScreen({super.key});
@@ -7,8 +8,8 @@ class AppDrawerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      // backgroundColor: Colors.white,
       backgroundColor: Colors.transparent,
+      width: 300.0,
       child: Container(
         padding: EdgeInsets.all(10.0),
         decoration: BoxDecoration(
@@ -62,31 +63,9 @@ class AppDrawerScreen extends StatelessWidget {
                 color: Colors.white,
                 thickness: 3.0,
               ),
-
               Gap(20.0),
 
-              Row(
-                children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white
-                    ),
-                    child: Icon(Icons.shopping_bag_outlined, color: Colors.red),
-                  ),
-                  Gap(20.0),
-                  
-                  Text('My Orders',
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                    ),
-                  )
-                ],
-              ),
+              AppDrawerCard(iconData: Icons.shopping_bag_outlined, name: 'My Orders'),
               Gap(10.0),
 
               Divider(
@@ -95,28 +74,7 @@ class AppDrawerScreen extends StatelessWidget {
               ),
               Gap(10.0),
 
-              Row(
-                children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white
-                    ),
-                    child: Icon(Icons.person, color: Colors.red),
-                  ),
-                  Gap(20.0),
-
-                  Text('My Profile',
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                    ),
-                  )
-                ],
-              ),
+              AppDrawerCard(iconData: Icons.person, name: 'My Profile'),
               Gap(10.0),
 
               Divider(
@@ -125,28 +83,7 @@ class AppDrawerScreen extends StatelessWidget {
               ),
               Gap(10.0),
 
-              Row(
-                children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white
-                    ),
-                    child: Icon(Icons.delivery_dining, color: Colors.red),
-                  ),
-                  Gap(20.0),
-
-                  Text('Delivery Address',
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                    ),
-                  )
-                ],
-              ),
+              AppDrawerCard(iconData: Icons.delivery_dining, name: 'Delivery Address'),
               Gap(10.0),
 
               Divider(
@@ -155,28 +92,7 @@ class AppDrawerScreen extends StatelessWidget {
               ),
               Gap(10.0),
 
-              Row(
-                children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white
-                    ),
-                    child: Icon(Icons.payment, color: Colors.red),
-                  ),
-                  Gap(20.0),
-
-                  Text('Payment Methods',
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                    ),
-                  )
-                ],
-              ),
+              AppDrawerCard(iconData: Icons.payment, name: 'Payment Methods'),
               Gap(10.0),
 
               Divider(
@@ -185,28 +101,7 @@ class AppDrawerScreen extends StatelessWidget {
               ),
               Gap(10.0),
 
-              Row(
-                children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white
-                    ),
-                    child: Icon(Icons.contrast, color: Colors.red),
-                  ),
-                  Gap(20.0),
-
-                  Text('Contract Us',
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                    ),
-                  )
-                ],
-              ),
+              AppDrawerCard(iconData: Icons.contrast, name: 'Contract Us'),
               Gap(10.0),
 
               Divider(
@@ -215,28 +110,7 @@ class AppDrawerScreen extends StatelessWidget {
               ),
               Gap(10.0),
 
-              Row(
-                children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white
-                    ),
-                    child: Icon(Icons.help, color: Colors.red),
-                  ),
-                  Gap(20.0),
-
-                  Text('Help & FAQs',
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                    ),
-                  )
-                ],
-              ),
+              AppDrawerCard(iconData: Icons.help, name: 'Help & FAQs'),
               Gap(10.0),
 
               Divider(
@@ -245,28 +119,7 @@ class AppDrawerScreen extends StatelessWidget {
               ),
               Gap(10.0),
 
-              Row(
-                children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white
-                    ),
-                    child: Icon(Icons.settings, color: Colors.red),
-                  ),
-                  Gap(20.0),
-
-                  Text('Settings',
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                    ),
-                  )
-                ],
-              ),
+              AppDrawerCard(iconData: Icons.settings, name: 'Settings'),
               Gap(10.0),
 
               Divider(
@@ -275,28 +128,7 @@ class AppDrawerScreen extends StatelessWidget {
               ),
               Gap(20.0),
 
-              Row(
-                children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white
-                    ),
-                    child: Icon(Icons.logout, color: Colors.red),
-                  ),
-                  Gap(20.0),
-
-                  Text('Log Out',
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                    ),
-                  )
-                ],
-              ),
+              AppDrawerCard(iconData: Icons.logout, name: 'Log Out'),
               Gap(10.0),
 
             ]
