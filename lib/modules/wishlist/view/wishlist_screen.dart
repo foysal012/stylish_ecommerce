@@ -167,8 +167,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
           child: CircleAvatar(
             maxRadius: 10,
             backgroundColor: Colors.black12,
-            child: Icon(Symbols.menu_open),
-          ),
+            child: Icon(Symbols.menu_open)
+          )
         ),
 
         title: Row(
@@ -181,7 +181,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Color(0xff4392F9)
-              ),
+              )
             )
           ],
         ),
@@ -193,7 +193,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
               backgroundImage:AssetImage('${AppImage.profileImage}')
           ),
           Gap(10.0)
-        ],
+        ]
       ),
 
       body: Container(
@@ -253,7 +253,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                           fontSize: 18,
                           color: Color(0xff000000),
                           fontWeight: FontWeight.w500
-                      ),
+                      )
                     ),
                 
                     Row(
@@ -275,7 +275,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                               ),
                               Gap(5.0),
                               Icon(Symbols.swap_vert, size: 15)
-                            ],
+                            ]
                           ),
                         ),
                         Gap(10.0),
@@ -297,7 +297,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                               ),
                               Gap(5.0),
                               Icon(Symbols.filter_alt, size: 15)
-                            ],
+                            ]
                           ),
                         )
                       ],
@@ -326,7 +326,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                               productDiscount: '${productInfo.productDiscount}',
                               productRating: double.tryParse('${productInfo.productRating}'),
                               productRatingNumber: '${productInfo.productRatingNumber}',
-                            ),
+                            )
                           ),
 
                           Positioned(
@@ -340,7 +340,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                                 color: Colors.grey[500]
                               ),
                               child: Icon(Symbols.heart_check_rounded, color: Colors.red)
-                            ),
+                            )
                           )
                         ],
                       ),
@@ -352,10 +352,10 @@ class _WishlistScreenState extends State<WishlistScreen> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
-                  childAspectRatio: 0.95,
-                ),
+                  childAspectRatio: 0.95
+                )
               ),
-              SliverToBoxAdapter(child: Gap(50.0)),
+              SliverToBoxAdapter(child: Gap(50.0))
             ],
         ),
       ),

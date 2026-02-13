@@ -26,9 +26,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
             width: 20,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.grey[500],
+              // color: Colors.grey[500],
+              color: Colors.black12,
             ),
-            child: Icon(Symbols.arrow_back),
+            child: Icon(Symbols.arrow_back)
           ),
         ),
 
@@ -58,7 +59,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(5.0)),
                           color: Colors.purple
-                        ),
+                        )
                       ),
                       Gap(10.0),
 
@@ -77,7 +78,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: Colors.black38
-                            ),
+                            )
                           ),
                         ],
                       ),
@@ -102,12 +103,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   borderRadius: BorderRadius.circular(30.0),
                   color: Colors.white
                 ),
-                child: Icon(Symbols.lab_profile),
+                child: Icon(Symbols.lab_profile)
               ),
               
               title: Text('Account Details', style: TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold)),
               
-              trailing: Icon(Icons.arrow_forward_ios_outlined),
+              trailing: Icon(Icons.arrow_forward_ios_outlined)
             ),
             Gap(10.0),
 
@@ -120,12 +121,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     borderRadius: BorderRadius.circular(30.0),
                     color: Colors.white
                 ),
-                child: Icon(Symbols.notification_add),
+                child: Icon(Symbols.notification_add)
               ),
 
               title: Text('Notifications', style: TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold)),
 
-              trailing: Icon(Icons.arrow_forward_ios_outlined),
+              trailing: Icon(Icons.arrow_forward_ios_outlined)
             ),
             Gap(10.0),
 
@@ -138,12 +139,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     borderRadius: BorderRadius.circular(30.0),
                     color: Colors.white
                 ),
-                child: Icon(Symbols.email),
+                child: Icon(Symbols.email)
               ),
 
               title: Text('Email', style: TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold)),
 
-              trailing: Icon(Icons.arrow_forward_ios_outlined),
+              trailing: Icon(Icons.arrow_forward_ios_outlined)
             ),
             Gap(10.0),
 
@@ -156,12 +157,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     borderRadius: BorderRadius.circular(30.0),
                     color: Colors.white
                 ),
-                child: Icon(Symbols.moved_location),
+                child: Icon(Symbols.moved_location)
               ),
 
               title: Text('Location Services', style: TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold)),
 
-              trailing: Icon(Icons.arrow_forward_ios_outlined),
+              trailing: Icon(Icons.arrow_forward_ios_outlined)
             ),
             Gap(10.0),
 
@@ -174,7 +175,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     borderRadius: BorderRadius.circular(30.0),
                     color: Colors.white
                 ),
-                child: Icon(Symbols.logout),
+                child: Icon(Symbols.logout)
               ),
 
               title: Text('Log Out', style: TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold)),
@@ -195,12 +196,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     borderRadius: BorderRadius.circular(30.0),
                     color: Colors.white
                 ),
-                child: Icon(Symbols.help),
+                child: Icon(Symbols.help)
               ),
 
               title: Text('Help Center', style: TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold)),
 
-              trailing: Icon(Icons.arrow_forward_ios_outlined),
+              trailing: Icon(Icons.arrow_forward_ios_outlined)
             ),
             Gap(10.0),
 
@@ -213,15 +214,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     borderRadius: BorderRadius.circular(30.0),
                     color: Colors.white
                 ),
-                child: Icon(Symbols.terminal_sharp),
+                child: Icon(Symbols.terminal_sharp)
               ),
 
               title: Text('Terms & Conditions', style: TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold)),
 
-              trailing: Icon(Icons.arrow_forward_ios_outlined),
+              trailing: Icon(Icons.arrow_forward_ios_outlined)
             ),
-            Gap(10.0),
-          ],
+            Gap(10.0)
+          ]
         ),
       ),
     );
