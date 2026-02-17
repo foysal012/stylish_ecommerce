@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:stylish_ecommerce/core/constants/app_image.dart';
+import '../../../core/constants/app_image.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -35,7 +35,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
                     color: Colors.black
-                  ),
+                  )
               ),
               Gap(36.0),
 
@@ -132,8 +132,8 @@ class _SignInScreenState extends State<SignInScreen> {
                     fontSize: 20,
                     color: Color(0xffFFFFFF),
                     fontWeight: FontWeight.w700
-                  ),
-                ),
+                  )
+                )
               ),
               Gap(75.0),
               
@@ -163,7 +163,22 @@ class _SignInScreenState extends State<SignInScreen> {
                           ),
                           color: Color(0xffFCF3F6)
                         ),
-                        child: Image.asset('${AppImage.google}'),
+                        child: Image.asset('${AppImage.google}')
+                      ),
+                      Gap(10.0),
+
+                      Container(
+                        height: 54,
+                        width: 54,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Color(0xffF83758),
+                              width: 2
+                            ),
+                            color: Color(0xffFCF3F6)
+                        ),
+                        child: Image.asset('${AppImage.apple}')
                       ),
                       Gap(10.0),
 
@@ -178,22 +193,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             ),
                             color: Color(0xffFCF3F6)
                         ),
-                        child: Image.asset('${AppImage.apple}'),
-                      ),
-                      Gap(10.0),
-
-                      Container(
-                        height: 54,
-                        width: 54,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: Color(0xffF83758),
-                              width: 2,
-                            ),
-                            color: Color(0xffFCF3F6)
-                        ),
-                        child: Image.asset('${AppImage.facebook}'),
+                        child: Image.asset('${AppImage.facebook}')
                       )
                     ],
                   ),
@@ -207,7 +207,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             fontSize: 14,
                             color: Color(0xff676767),
                             fontWeight: FontWeight.w500
-                        ),
+                        )
                       ),
                       Gap(5.0),
                       Text('Sign Up',
@@ -222,8 +222,8 @@ class _SignInScreenState extends State<SignInScreen> {
                             shadows: [
                               Shadow(
                                 color: Color(0xffF83758),
-                                offset: Offset(0, -2),
-                              ),
+                                offset: Offset(0, -2)
+                              )
                             ]
                         ),
                       ),
