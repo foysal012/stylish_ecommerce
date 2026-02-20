@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:stylish_ecommerce/core/constants/app_image.dart';
+import '../../../core/constants/app_image.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -37,7 +37,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   fontSize: 36,
                   fontWeight: FontWeight.bold,
                   color: Colors.black
-              ),
+              )
             ),
             Gap(36.0),
 
@@ -175,7 +175,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                         ),
                       ]
-                  ),
+                  )
                 )
               ],
             ),
@@ -195,8 +195,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     fontSize: 20,
                     color: Color(0xffFFFFFF),
                     fontWeight: FontWeight.w700
-                ),
-              ),
+                )
+              )
             ),
             Gap(75.0),
 
@@ -226,7 +226,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                           color: Color(0xffFCF3F6)
                       ),
-                      child: Image.asset('${AppImage.google}'),
+                      child: Image.asset('${AppImage.google}')
                     ),
                     Gap(10.0),
 
@@ -241,7 +241,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                           color: Color(0xffFCF3F6)
                       ),
-                      child: Image.asset('${AppImage.apple}'),
+                      child: Image.asset('${AppImage.apple}')
                     ),
                     Gap(10.0),
 
@@ -258,7 +258,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       child: Image.asset('${AppImage.facebook}'),
                     )
-                  ],
+                  ]
                 ),
                 Gap(30.0),
 
@@ -270,7 +270,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           fontSize: 14,
                           color: Color(0xff676767),
                           fontWeight: FontWeight.w500
-                      ),
+                      )
                     ),
                     Gap(5.0),
                     Text('Login',
@@ -286,7 +286,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             Shadow(
                               color: Color(0xffF83758),
                               offset: Offset(0, -2),
-                            ),
+                            )
                           ],
                       ),
                     ),
