@@ -54,6 +54,12 @@ class AppDrawerScreen extends StatelessWidget {
                           ),
                       )
                     ],
+                  ),
+                  Gap(10.0),
+
+                  InkWell(
+                    onTap: (){},
+                    child: Icon(Icons.more_vert, color: Colors.white),
                   )
                 ],
               ),
